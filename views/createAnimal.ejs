@@ -1,0 +1,52 @@
+<%- include('navbar') %>
+
+<div class="container-fluid">
+  <br />
+  <br />
+  <div class="row addanimal mt-5 px-5 text-secondary">
+    <div class="my-3 col-4 d-none d-lg-block foto2"></div>
+    <div class="col-12 col-lg-8 px-5">
+      <h4>REGISTRA UN PERRO</h4>
+      <form
+        action="/animal/createAnimal/<%- trainer_id %>"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <input
+          class="form-control my-3"
+          type="text"
+          id="name"
+          placeholder="Nombre"
+          aria-label=".form-control-lg example"
+          name="animal_name"
+          required
+        />
+        <label for="description">Descripción</label>
+        <input
+          class="form-control my-3"
+          type="text"
+          id="description"
+          placeholder="ej. Perro adulto"
+          aria-label=".form-control-lg example"
+          name="description"
+          required
+        />
+
+        <div class="my-3">
+          <label for="formFileLg" class="form-label"
+            >Introduce una imagen del perro</label
+          >
+          <input
+            class="form-control"
+            id="formFileLg"
+            type="file"
+            name="img"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-success mb-3">Registrar</button>
+      </form>
+    </div>
+  </div>
+</div>
+<%- include('footer') %>

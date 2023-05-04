@@ -1,0 +1,35 @@
+<%- include('navbar') %>
+
+<div class="container-fluid">
+  <br />
+  <br />
+  <div class="row">
+    <div class="col mt-5 text-center text-secondary">
+      <h2>TODOS LOS ANIMALES ENTRENADOS</h2>
+    </div>
+  </div>
+  <div class="row">
+    <% result.forEach(animal => { %>
+    <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center my-5">
+      <div class="card" style="width: 18rem">
+        <img
+          src="/images/animals/<%- animal.animal_image %>"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title"><%- animal.animal_name %></h5>
+          <a
+            href="/trainer/oneTrainer/<%- animal.trainer_id %>"
+            class="btn btn-success"
+            >Info del entrenador</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <% }) %>
+  </div>
+</div>
+
+<%- include('footer') %>

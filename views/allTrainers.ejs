@@ -1,0 +1,54 @@
+<%- include('navbar') %>
+
+<div class="container-fluid">
+  <form
+    class="form-inline sticky-top p-5 barra"
+    action="/trainer/allTrainers/"
+    method="post"
+  >
+    <br />
+    <input
+      class="form-control mr-sm-2"
+      type="search"
+      placeholder="Busca por nombre del entrenador"
+      aria-label="Search"
+      name="word"
+    />
+    <h6 class="text-danger"><%- message %></h6>
+    <br />
+    <button class="btn btn-success my-2 my-sm-0" type="submit">Buscar</button>
+  </form>
+
+  <div class="row">
+    <div class="col text-center text-secondary">
+      <h2>CONOCE A LOS ENTRENADORES</h2>
+    </div>
+  </div>
+  <div class="row">
+    <% result.forEach(trainer => { %>
+    <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center my-5">
+      <div class="card" style="width: 18rem">
+        <img
+          src="/images/trainers/<%- trainer.trainer_image %>"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">
+            <%- trainer.trainer_name %> <%- trainer.last_name %>
+          </h5>
+          <p><%- trainer.country %></p>
+          <a
+            href="/trainer/oneTrainer/<%- trainer.trainer_id %>"
+            class="btn btn-success"
+            >+info</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <% }) %>
+  </div>
+
+  <%- include('footer') %>
+</div>

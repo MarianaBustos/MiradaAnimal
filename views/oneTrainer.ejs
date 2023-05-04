@@ -1,0 +1,103 @@
+<%- include('navbar') %>
+<div class="container-fluid">
+  <br />
+<br />
+  <div class="row">
+    <div class="col mt-5 text-center text-secondary">
+      <h2><%- resultTrainer[0].trainer_name %> <%- resultTrainer[0].last_name
+        %></h2>
+    </div>
+  </div>
+  
+  <div class="row d-flex justify-content-center m-5">
+      <div class=" card col-12 col-md-6 m-2 pt-2" style="width: 18rem">
+        <img
+          src="/images/trainers/<%- resultTrainer[0].trainer_image %>"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">
+            <%- resultTrainer[0].trainer_name %> <%- resultTrainer[0].last_name
+            %>
+          </h5>
+          <p class="card-text"><%- resultTrainer[0].country %></p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><%- resultTrainer[0].phone %></li>
+          <li class="list-group-item"><%- resultTrainer[0].email %></li>
+        </ul>
+      
+      </div>
+      <div class="card col-12 col-md-6 m-2 pt-2" style="width: 18rem">
+        <div class="card-header">
+          <h5 class="card-title text-center
+          ">
+            ¡Ponte en contacto con
+            <strong><%- resultTrainer[0].trainer_name %></strong>!
+          </h5>
+          
+          
+        </div>
+        <ul class="list-group list-group-flush">
+          <br>
+            <li class="list-group-item">
+              <a
+                href="https://api.whatsapp.com/send?phone=<%- resultTrainer[0].phone %>&text=Hola <%- resultTrainer[0].trainer_name %>, ¡Gusto en saludarte!"
+                ><button type="button" class="btn btn-secondary btn-sm">Envía un mensaje de WhatsApp</button></a
+              >
+            </li>
+            <li class="list-group-item">
+              <a href="mailto:<%- resultTrainer[0].email %>"><button type="button" class="btn btn-secondary btn-sm">Envía un email</button></a>
+            </li>
+            <li class="list-group-item">
+              <a href="tel:<%- resultTrainer[0].phone %>"><button type="button" class="btn btn-secondary btn-sm">Realiza una llamada</button></a>
+            </li>
+            <br>
+            <li class="list-group-item">
+            <a
+          href="/animal/createAnimal/<%- resultTrainer[0].trainer_id %>"
+          class="card-link"
+          ><button type="button" class="btn btn-success">Añadir perro</button></a
+        >
+      </li>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col mt-5 text-center text-secondary">
+      <h2>PERROS ENTRENADOS</h2>
+    </div>
+  </div>
+  <div class="row">
+    <% resultAnimal.forEach(animal => { %>
+    <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center my-5">
+      <div class="card" style="width: 18rem">
+        <img
+          src="/images/animals/<%- animal.animal_image %>"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title"><%- animal.animal_name %></h5>
+          <p class="card-text"><%- animal.description %></p>
+          <a
+            href="/animal/editAnimal/<%- animal.animal_id %>"
+            class="btn btn-success m-3"
+            >Editar</a
+          >
+          <a
+            href="/animal/delete/<%- animal.animal_id %>/<%- animal.trainer_id %>"
+            class="btn btn-secondary m-3"
+            >Eliminar</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <% })%>
+  </div>
+</div>
+<%- include('footer') %>

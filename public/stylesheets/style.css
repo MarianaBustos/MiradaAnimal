@@ -1,0 +1,118 @@
+.home {
+  background-image: url(https://plus.unsplash.com/premium_photo-1663090656483-29360f79621f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);
+  background-size: cover;
+  background-position: 50% 60%;
+  height: calc(100vh - 57px);
+}
+.home div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.home h1 {
+  font-size: 10vw;
+  color: rgba(255, 255, 255, 0.824);
+}
+
+.card-img, .card-img-bottom, .card-img-top {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.h2, h2{
+  text-transform: uppercase;
+}
+/*
+.carrousel img{
+  height: 80vh;
+  object-fit: cover;
+  object-position: center;
+}
+*/
+
+
+
+  .foto {
+    background-image: url(https://img.freepik.com/fotos-premium/entrenador-perros-amando-su-perro-al-aire-libre-sesion-entrenamiento_23-2149448236.jpg?w=2000);
+    background-size: cover;
+    background-position: 50% 50%;
+
+  }
+  .foto2 {
+    background-image: url(https://www.zooplus.es/magazine/wp-content/uploads/2020/05/Perro-guia.jpeg);
+    background-size: cover;
+    background-position: 50% 50%;
+
+  }
+
+
+  .carrousel img{
+    height: 70vh;
+  object-fit: cover;
+  object-position: 90% 30%;
+   
+  }
+
+  .carru h1{
+    font-size: 15vh;
+  color: rgba(255, 255, 255, 0.824);
+  text-align: center;
+  }
+
+  .carru h2{
+
+  color: rgba(255, 255, 255, 0.824);
+  text-align: center;
+  }
+  
+  .carru2 h1{
+    font-size: 15vh;
+  color: rgba(255, 255, 255, 0.824);
+  text-align: center;
+  text-transform: uppercase;
+
+  }
+  .barra {
+    background-color: rgba(255, 255, 255, 0.909);
+   }
+
+   .login {
+      height: calc(100vh - 214px);
+  }
+
+  .addanimal {
+    height: calc(100vh - 262px);
+}
+
+.editanimal {
+  height: calc(100vh - 214px);
+}
+.editanews {
+  height: calc(100vh - 214px);
+}
+  @media (max-width: 1199px){
+    .login {
+         height: calc(100vh - 276px);
+         
+  }
+}
+
+  @media (max-width: 992px){
+    .login {
+         height: calc(100vh - 262px);
+  }
+  .editanews {
+    height: calc(100vh - 262px);
+  }
+ }
+  
+  @media(max-width:767px){
+    .login {
+      height: calc(100vh - 324px);
+ }
+ .editanews {
+  height: calc(100vh - 324px);
+}
+}
